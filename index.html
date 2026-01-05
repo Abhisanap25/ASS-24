@@ -6,7 +6,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #d5f96a, #ea9a31);
+            background: linear-gradient(135deg, #f30ec5e6, #b2c9e9);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,48 +15,48 @@
 
         .container {
             background: #ffffff;
-            padding: 25px;
+            padding: 30px;
             width: 400px;
-            border-radius: 15px;
+            border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
         h2 {
             text-align: center;
-            color: #dd2aa4;
+            color: #3e12ef;
             margin-bottom: 20px;
         }
 
         input {
             width: 100%;
             padding: 10px;
-            margin: 8px 0;
-            border-radius: 6px;
-            border: 1px solid #3f3436;
-            font-size: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 20px;
         }
 
         button {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
-            background: #07dae2;
+            background: #de405d;
             color: #fff;
             border: none;
             border-radius: 8px;
-            font-size: 15px;
+            font-size: 20px;
             cursor: pointer;
         }
 
         button:hover {
-            background: #a146e1;
+            background: #0da0c5;
         }
 
         .output {
             margin-top: 15px;
             padding: 10px;
             background: #f3f3f3;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: bold;
             color: #333;
             min-height: 40px;
@@ -68,7 +68,7 @@
 <div class="container">
     <h2>Array Programs</h2>
 
-    <input type="text" id="arrayInput" placeholder="Enter numbers (e.g. 10,20,30)">
+    <input type="text" id="arrayInput" placeholder="Enter numbers (e.g. 1,2,3)">
     <input type="number" id="searchValue" placeholder="Search value (for Linear Search)">
 
     <button onclick="linearSearch()">Linear Search</button>
@@ -94,9 +94,9 @@
 
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] === value) {
-                console.log(Element found at index ${i});
+                console.log(`Element found at index ${i}`);
                 document.getElementById("result").innerText =
-                    Element found at index ${i};
+                    `Element found at index ${i}`;
                 return;
             }
         }
@@ -116,7 +116,7 @@
 
         console.log("Smallest number:", min);
         document.getElementById("result").innerText =
-            Smallest number: ${min};
+            `Smallest number: ${min}`;
     }
 
     function findLargest() {
@@ -129,7 +129,7 @@
 
         console.log("Largest number:", max);
         document.getElementById("result").innerText =
-            Largest number: ${max};
+            `Largest number: ${max}`;
     }
 
     function findSum() {
@@ -142,7 +142,7 @@
 
         console.log("Sum of array:", sum);
         document.getElementById("result").innerText =
-            Sum of array: ${sum};
+            `Sum of array: ${sum}`;
     }
 </script>
 </body>

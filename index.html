@@ -40,7 +40,7 @@
             width: 100%;
             padding: 10px;
             margin-top: 10px;
-            background: #a146e1;
+            background: #07dae2;
             color: #fff;
             border: none;
             border-radius: 8px;
@@ -64,4 +64,86 @@
     </style>
 </head>
 <body>
-    
+
+<div class="container">
+    <h2>Array Programs</h2>
+
+    <input type="text" id="arrayInput" placeholder="Enter numbers (e.g. 10,20,30)">
+    <input type="number" id="searchValue" placeholder="Search value (for Linear Search)">
+
+    <button onclick="linearSearch()">Linear Search</button>
+    <button onclick="findSmallest()">Find Smallest</button>
+    <button onclick="findLargest()">Find Largest</button>
+    <button onclick="findSum()">Find Sum</button>
+
+    <div class="output" id="result">Result will appear here</div>
+</div>
+
+<script>
+    function getArray() {
+        const input = document.getElementById("arrayInput").value;
+        const arr = input.split(",").map(Number);
+        console.log("Array:", arr);
+        return arr;
+    }
+
+    function linearSearch() {
+        const arr = getArray();
+        const value = Number(document.getElementById("searchValue").value);
+        console.log("Searching for:", value);
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === value) {
+                console.log(Element found at index ${i});
+                document.getElementById("result").innerText =
+                    Element found at index ${i};
+                return;
+            }
+        }
+
+        console.log("Element not found");
+        document.getElementById("result").innerText =
+            "Element not found";
+    }
+
+    function findSmallest() {
+        const arr = getArray();
+        let min = arr[0];
+
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < min) min = arr[i];
+        }
+
+        console.log("Smallest number:", min);
+        document.getElementById("result").innerText =
+            Smallest number: ${min};
+    }
+
+    function findLargest() {
+        const arr = getArray();
+        let max = arr[0];
+
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] > max) max = arr[i];
+        }
+
+        console.log("Largest number:", max);
+        document.getElementById("result").innerText =
+            Largest number: ${max};
+    }
+
+    function findSum() {
+        const arr = getArray();
+        let sum = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+
+        console.log("Sum of array:", sum);
+        document.getElementById("result").innerText =
+            Sum of array: ${sum};
+    }
+</script>
+</body>
+</html>
